@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ayo Kursus</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+    <style>
+      .bg-primary {
+        background-color: #2596be !important;
+      }
+
+      section,
+      .section {
+        color: var(--default-color);
+        background-color: var(--background-color);
+        padding: 0;
+        scroll-margin-top: 900px;
+        overflow: clip;
+      }
+
+      .about .section-title,
+      .features .section-title,
+      .testimonials .section-title,
+      .events .section-title {
+        padding-bottom: 1rem;
+      }
+
+      .about .section-title p,
+      .features .section-title p,
+      .testimonials .section-title p,
+      .events .section-title p {
+        color: rgb(37, 150, 190) !important;
+        text-decoration: underline;
+        font-size: 1.25rem;
+      }
+
+      .w-40 {
+        width: 35% !important;
+      }
+
+      .content {
+        color: white;
+        width: 80%;
+      }
+
+      .content p {
+        font-size: 0.9rem;
+      }
+
+      .content ul li span {
+        font-size: 0.85rem;
+      }
+
+      .about .content ul li {
+        padding-bottom: 0px;
+      }
+
+      .about img {
+        width: 20%;
+        height: auto;
+      }
+
+      .events .card-body {
+        z-index: 10;
+        background: var(--surface-color);
+        border-top: 4px solid var(--surface-color);
+        padding: 13px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        margin-top: -73px;
+        transition: 0.3s;
+      }
+
+      footer .wa-logo {
+        width: 75px;
+        height: 75px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .content {
+          color: white;
+          width: 65%;
+        }
+
+        .about .content ul li {
+          color: #fff;
+          font-size: 15px;
+          padding-bottom: 0;
+        }
+
+        .about .content ul li i,
+        .about .content ul li span {
+          color: #fff;
+          font-size: 15px;
+        }
+
+        .about img {
+          width: 35%;
+          height: auto;
+        }
+
+        .about .content .read-more {
+          background: #2b960b;
+          color: var(--contrast-color);
+          font-family: var(--heading-font);
+          font-weight: 500;
+          font-size: 15px;
+          letter-spacing: 1px;
+          padding: 5px 15px 5px 15px;
+          border-radius: 5px;
+          transition: 0.3s;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .features .features-item i {
+          font-size: 18px;
+        }
+
+        .features .features-item h3 .stretched-link {
+          font-size: 14px;
+        }
+
+        .events .card-body {
+          z-index: 10;
+          background: var(--surface-color);
+          border-top: 4px solid var(--surface-color);
+          padding: 10px 15px;
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+          margin-top: -55px;
+          transition: 0.3s;
+          margin-bottom: 25px;
+        }
+
+        .events .card-img {
+          width: calc(100% + 60px);
+          margin-left: -30px;
+          overflow: hidden;
+          z-index: 9;
+          border-radius: 0;
+        }
+
+        .events .card-title {
+          font-weight: 700;
+          text-align: center;
+          margin-bottom: 0px;
+        }
+      }
+
+      .popup-container {
+        position: fixed;
+        top: 80px; /* Geser ke bawah agar tidak menutupi header */
+        left: 10px; /* Lebih dekat ke kiri */
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        z-index: 1000;
+      }
+
+      .popup {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background: orange;
+          color: white;
+          padding: 10px 14px; /* Sedikit lebih besar agar teks nyaman */
+          border-radius: 8px;
+          font-size: 12px;
+          width: 220px;
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+      }
+
+      .popup img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+      }
+
+      .popup.show {
+          opacity: 1;
+          transform: translateY(0);
+      }
+    </style>
+
+    <!-- =======================================================
+  * Template Name: Mentor
+  * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  </head>
+
+  <body class="index-page">
+    <header id="header" class="header d-flex flex-column align-items-center justify-content-center sticky-top bg-primary">
+      <!-- PopUp -->
+       <div class="popup-container" id="popupContainer">
+        <div class="popup" id="popup1">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Aulia Anjani</strong><br>
+                Telah Mendaftar Program Bahasa Arab<br>
+                <small>5 menit lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup2">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Budi Santoso</strong><br>
+                Telah Mendaftar Program Komputer Dasar<br>
+                <small>10 menit lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup3">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Siti Rahma</strong><br>
+                Telah Mendaftar Program Bahasa Inggris<br>
+                <small>15 menit lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup4">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Khalisa Marwa</strong><br>
+                Telah Mendaftar Program Programmer<br>
+                <small>20 menit lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup5">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Andri Setiawan</strong><br>
+                Telah Mendaftar Program Akuntasi & Perpajakan<br>
+                <small>1 jam lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup6">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Retno Puji Astuti</strong><br>
+                Telah Mendaftar Program Bahasa Mandarin<br>
+                <small>20 jam lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup7">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>M. Ridwan</strong><br>
+                Telah Mendaftar Program Komputer Dasar<br>
+                <small>35 menit lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup8">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Ananda Ria Pratiwi</strong><br>
+                Telah Mendaftar Program Jepang<br>
+                <small>20 menit lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup9">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>Fitri Amelia</strong><br>
+                Telah Mendaftar Program Bahasa Korea<br>
+                <small>4 jam lalu</small>
+            </div>
+        </div>
+        <div class="popup" id="popup10">
+            <img src="assets/img/favicon-16x16.png" alt="Icon">
+            <div>
+                <strong>M. Ramdan</strong><br>
+                Telah Mendaftar Program Bahasa Inggris<br>
+                <small>3 jam lalu</small>
+            </div>
+        </div>
+    </div>
+
+      <!-- <marquee behavior="scroll" direction="left"><span class="text-white">Tersedia Pembelajaran Online dan Offline</span>
+      </marquee> -->
+      <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-center">
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+          <!-- Uncomment the line below if you also wish to use an image logo -->
+          <img src="assets/img/logo-2.png" alt="" />
+          <!-- <h1 class="sitename">Mentor</h1> -->
+        </a>
+      </div>
+    </header>
+
+    <main class="main pb-4">
+      <!-- Hero Section -->
+      <section id="hero" class="">
+        <div
+          id="carouselExampleFade"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="assets/img/ayokursus1.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="assets/img/ayokursus2.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="assets/img/ayokursus3.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <nav class="breadcrumbs bg-primary pt-2 pb-1">
+            <div class="container">
+              <marquee behavior="scroll" direction="left">
+                <span class="text-white">
+                  Tersedia Pembelajaran Online dan Offline
+                </span>
+              </marquee>
+            </div>
+          </nav>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <section id="about" class="about section pt-4 pb-1">
+        <div class="container section-title text-center" data-aos="fade-up">
+          <!-- <h2>Courses</h2> -->
+          <p><u>Ayo Kursus</u></p>
+        </div>
+        <div class="container text-center">
+          <!-- <h2 data-aos="fade-up" data-aos-delay="100" style="color: #d546d9">AYO KURSUS</h2> -->
+          <p
+            data-aos="fade-up"
+            data-aos-delay="200"
+            class="fst-italic"
+            style="text-align: justify; font-size: 1.2rem !important"
+          >
+            Ayo Kursus merupakan program kursus bagi pelajar hingga umum yang
+            bertujuan untuk meningkatkan potensi diri atau sosfkill dibidang
+            kompetensi teretntu sesuai minat dan bakat. Program ayo kursus ini
+            nantinya bisa menjadi solusi bagi siswa yang merasa kesusahan dalam
+            berbagai masalah tertentu, bahkan nantinya bisa untuk bekal ketika
+            ingin memasuki dunia kerja. Adapun program kursus yang dimaksud
+            disini adalah kursus komputer dengan kemampuan kompetensi sebagai
+            berikut : komputer dasar (Microsoft office), Desain Grafis ,
+            Programmer. Dan Kursus Bahasa asing seperti kursus Bahasa inggris,
+            Bahasa mandarin, Bahasa jepang, Bahasa arab, Bahasa korea.
+          </p>
+        </div>
+      </section>
+      <!-- About Section -->
+      <section id="about" class="about section pt-4 pb-1">
+        <div class="container section-title text-center" data-aos="fade-up">
+          <!-- <h2>Courses</h2> -->
+          <p style="color: rgb(37, 150, 190)" class="mb-4">
+            <u>Ayo Pilih Kursus Kesukaanmu</u>
+          </p>
+        </div>
+        <div class="container">
+          <!-- Course Bahasa -->
+          <div
+            class="row row-cols-2 row-cols-md-2 bg-primary mb-2 py-4 mx-1 rounded"
+          >
+            <img
+              src="assets/img/course/course-bahasa.webp"
+              class="img-fluid"
+              alt=""
+              style="max-height: fit-content"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            />
+            <!-- <div class="col-lg-6 order-1 order-lg-1 w-50" data-aos="fade-up" data-aos-delay="100">
+                    </div> -->
+
+            <div
+              class="col-lg-6 order-2 order-lg-2 content pt-0"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3
+                class="fs-6 border border-secondar px-3 py-2 bg-white text-center"
+              >
+                Kursus Bahasa
+              </h3>
+              <p class="fst-normal m-0">Jenis Program Pembelajaran</p>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Bahasa Inggris</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Bahasa Mandarin</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Kursus Bahasa Jepang</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Bahasa Arab</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Bahasa Korea</span>
+                </li>
+              </ul>
+              <a href="kursus-bahasa.html" class="read-more shadow"
+                ><span>Selengkapnya</span><i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Course Komputer -->
+          <div
+            class="row row-cols-2 row-cols-md-2 bg-primary mb-2 py-4 mx-1 rounded"
+          >
+            <img
+              src="assets/img/course/course-komputer.webp"
+              class="img-fluid"
+              alt=""
+              style="max-height: fit-content"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            />
+            <!-- <div class="col-lg-6 order-1 order-lg-1 w-50" data-aos="fade-up" data-aos-delay="100">
+                    </div> -->
+
+            <div
+              class="col-lg-6 order-2 order-lg-2 content pt-0"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3
+                class="fs-6 border border-secondar px-3 py-2 bg-white text-center"
+              >
+                Kursus Komputer
+              </h3>
+              <p class="fst-normal m-0">Jenis Program Pembelajaran</p>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Komputer Dasar (Microsoft Office)</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Desain Grafis</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Kursus Programmer</span>
+                </li>
+              </ul>
+              <a href="kursus-komputer.html" class="read-more shadow"
+                ><span>Selengkapnya</span><i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          
+          <div
+            class="row row-cols-2 row-cols-md-2 bg-primary mb-2 py-4 mx-1 rounded"
+          >
+            <img
+              src="assets/img/course/course-pajak-akuntansi.webp"
+              class="img-fluid"
+              alt=""
+              style="max-height: fit-content"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            />
+            <!-- <div class="col-lg-6 order-1 order-lg-1 w-50" data-aos="fade-up" data-aos-delay="100">
+                    </div> -->
+
+            <div
+              class="col-lg-6 order-2 order-lg-2 content pt-0"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <h3
+                class="fs-6 border border-secondar px-3 py-2 bg-white text-center"
+              >
+                Kursus Akuntansi & Perpajakan
+              </h3>
+              <p class="fst-normal m-0">Jenis Program Pembelajaran</p>
+              <ul>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Dasar Akuntansi dan Perpajakan</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Investasi Uang dan Modal</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Prinsip Akuntansi Perpajakan</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Aset Keuangan</span>
+                </li>
+                <li>
+                  <i class="bi bi-check"></i>
+                  <span>Digitalisasi Akuntansi dan Perpajakan</span>
+                </li>
+              </ul>
+              <a href="kursus-akuntasi-perpajakan.html" class="read-more shadow"
+                ><span>Selengkapnya</span><i class="bi bi-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+
+      <section id="features" class="features section pt-4 pb-1">
+        <div class="container section-title text-center" data-aos="fade-up">
+          <!-- <h2>Courses</h2> -->
+          <p><u>Keunggulan Kursus</u></p>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link">Bersertifikat Resmi</a>
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Mempunyai Legalitas Izin Dinas Resmi</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Program Kursus Full Praktek 100%</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Waktu Belajar Menyesuaikan</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Kelas Maksimal 12 Orang</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Fasilitas Kursus Komputer yang Lengkap</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Program Belajar Kelas dan Privat (1 Siswa 1 Guru)</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Belajar Bisa Offline dan Online</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init aos-animate"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Belajar Bisa Dikantor Atau Guru Datang Kerumah</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-12 col-md-4 my-2 aos-init"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <div class="features-item border-0 p-0">
+                    <i
+                      class="bi bi-check-circle-fill"
+                      style="color: rgb(37, 150, 190)"
+                    ></i>
+                    <h3>
+                      <a href="#" class="stretched-link"
+                        >Bisa belajar dimanapun dan kapanpun</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" class="testimonials section pt-4 pb-1">
+        <!-- Section Title -->
+        <div class="container section-title text-center" data-aos="fade-up">
+          <!-- <h2>Courses</h2> -->
+          <p><u>testimoni program kursus</u></p>
+        </div>
+        <!-- End Section Title -->
+
+        <div
+          class="container bg-primary"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "breakpoints": {
+                  "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 40
+                  },
+                  "1200": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 20
+                  }
+                }
+              }
+            </script>
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <img
+                      src="assets/img/testimonials/testimonials-1.jpg"
+                      class="testimonial-img"
+                      alt=""
+                    />
+                    <h3>Wahyu Septian </h3>
+                    <h4>Kursus Bahasa Inggris</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span
+                        >Bersyukur banget akhirnya bisa nemu les yang cocok sama aku yang nggak hanya belajar satu arah tetapi 2 arah dan sangat interaktif dan asik. Pemahaman ku tenntang grammar bisa masuk banget ke aku. Terimakasih sudah menjadi mentor yang baik ayo kursus.</span
+                      >
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <img
+                      src="assets/img/testimonials/testimonials-2.jpg"
+                      class="testimonial-img"
+                      alt=""
+                    />
+                    <h3>Andika</h3>
+                    <h4>Kursus Programmer</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span
+                        >Sebelum les di ayo kursus aku gak tau apa-apa tentang Bahasa pemograman dan coding, tetapi setelah kursus aku senang sekali sudah paham Bahasa pemograman dan sudah mengerti mengelola website development. Pokoknya belajar coding di ayo kursus rekomendasi banget.</span
+                      >
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <img
+                      src="assets/img/testimonials/testimonials-3.jpg"
+                      class="testimonial-img"
+                      alt=""
+                    />
+                    <h3>Muh. Alvin Zulfikar </h3>
+                    <h4>Kursus Bahasa Korea</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span
+                        >Sebelum menemukan ayo kursus aku sangat bingung untuk melatih Bahasa korea ku karena sebentar lagi ada mau tes beasiswa ke korea, eh ada rekomendasi dari teman untuk kursus Bahasa kore di ayo kursus, taunya belajarnya menyenangkan, mentornya berpengalaman dan friendly, dan pada akhirnya aku lulus beasiswa ke korea. Terimakasih ayo kursus.</span
+                      >
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <img
+                      src="assets/img/testimonials/testimonials-4.jpg"
+                      class="testimonial-img"
+                      alt=""
+                    />
+                    <h3>Putri Azka Laili </h3>
+                    <h4>Kursus Desain Grafis</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span
+                        >Rekomendasi tempat kursus untuk desain grafis, aku diajarin dari dasar sampai mahir, dengan fasilitas komputer yang juga sangat lengkap.</span
+                      >
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial-item">
+                    <img
+                      src="assets/img/testimonials/testimonials-5.jpg"
+                      class="testimonial-img"
+                      alt=""
+                    />
+                    <h3>Anggita Larasati</h3>
+                    <h4>Kursus Bahasa Inggris</h4>
+                    <div class="stars">
+                      <i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i
+                      ><i class="bi bi-star-fill"></i>
+                    </div>
+                    <p>
+                      <i class="bi bi-quote quote-icon-left"></i>
+                      <span
+                        >Selama saya belajar Bahasa inggris di ayo kursus, banyak kemajuan dalam Bahasa inggris saya terutama speaking dan grammer. Guru yang sangat baik kayak belajar dengan teman sendiri selain itu juga kompeten dibidangnya. Intinya nilai Bahasa inggris sekolah saya dapat meningjkat drastis.</span
+                      >
+                      <i class="bi bi-quote quote-icon-right"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Events Section -->
+      <section id="events" class="events section pt-4 pb-1">
+        <div class="container section-title text-center" data-aos="fade-up">
+          <!-- <h2>Courses</h2> -->
+          <p><u>gallery kursus</u></p>
+        </div>
+        <div class="container d-none d-lg-block" data-aos="fade-up">
+          <div class="row row-cols-1 row-cols-md-4 g-4">
+            <!-- 1 -->
+            <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-a.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Introduction to webdesign</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 2 -->
+            <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-perpajakandanakuntansi.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Marketing Strategies</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 3 -->
+             <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-mandarin.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Kursus Bahasa Mandarin</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 4 -->
+             <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-office.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Kursus Komputer Microsoft Office</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 5 -->
+             <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-jepang.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Kursus Bahasa Jepang</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 6 -->
+             <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-office.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Kursus Desain Grafis</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 7 -->
+             <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-english.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Kursus Komputer Persiapan CPNS</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- 8 -->
+             <div class="d-flex align-items-stretch">
+              <div class="card">
+                <div class="card-img">
+                  <img src="assets/img/portofolio/port-english-2.jpg" alt="..." />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="">Kursus Bahasa Inggris</a>
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <!-- End -->
+          </div>
+        </div>
+        <div
+          class="container d-block d-lg-none"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <div class="swiper init-swiper">
+            <script type="application/json" class="swiper-config">
+              {
+                "loop": true,
+                "speed": 600,
+                "autoplay": {
+                  "delay": 5000
+                },
+                "slidesPerView": "auto",
+                "pagination": {
+                  "el": ".swiper-pagination",
+                  "type": "bullets",
+                  "clickable": true
+                },
+                "breakpoints": {
+                  "320": {
+                    "slidesPerView": 1,
+                    "spaceBetween": 40
+                  },
+                  "1200": {
+                    "slidesPerView": 2,
+                    "spaceBetween": 20
+                  }
+                }
+              }
+            </script>
+              <!-- 1 -->
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-a.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Introduction to webdesign</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-perpajakandanakuntansi.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Marketing Strategies</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-mandarin.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Kursus Bahasa Mandarin</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 4 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-office.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Kursus Komputer Microsoft Office</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 5 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-jepang.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Kursus Bahasa Jepang</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 6 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-office.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Kursus Desain Grafis</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 7 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-english.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Kursus Komputer Persiapan CPNS</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 8 -->
+                <div class="swiper-slide">
+                  <div class="d-flex align-items-stretch">
+                    <div class="card">
+                      <div class="card-img">
+                        <img src="assets/img/portofolio/port-english-2.jpg" alt="..." />
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <a href="">Kursus Bahasa Inggris</a>
+                        </h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End -->
+              <!-- End testimonial item -->
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="contact" class="contact section pt-5 pb-1 mb-5">
+        <!-- Section Title -->
+        <div
+          class="container section-title text-center"
+          data-aos="fade-up"
+          style="padding-bottom: 3rem"
+        >
+          <p
+            style="
+              color: rgb(37, 150, 190);
+              text-decoration: underline;
+              font-size: 1.25rem;
+            "
+          >
+            Alamat Lembaga
+          </p>
+        </div>
+        <!-- End Section Title -->
+
+        <!-- End Google Maps -->
+
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+            <div class="row gy-4">
+                <div class="col-lg-12 mb-4">
+                    <div class="row row-cols-1 row-cols-lg-2 g-4">
+                        <div
+                        class="info-item d-flex"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                        >
+                        <i class="bi bi-telephone flex-shrink-0"></i>
+                            <div>
+                                <h3>Nomor Telepon/Whatsapp</h3>
+                                <p>0823-8856-8452</p>
+                            </div>
+                        </div>
+                        <div
+                        class="info-item d-flex"
+                        data-aos="fade-up"
+                        data-aos-delay="300"
+                        >
+                        <i class="bi bi-envelope flex-shrink-0"></i>
+                            <div>
+                                <h3>E-mail</h3>
+                                <p>ayokursus90@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- End Contact Form -->
+            <div class="col-lg-12 mt-0">
+              <h3
+                data-aos="fade-up"
+                data-aos-delay="200"
+                class="mb-4"
+                style="text-align: center"
+              >
+                Sosial Media Lembaga
+              </h3>
+              <div class="row row-cols-3 row-cols-md-3 g-4 features pt-4">
+                <div
+                  class="col mt-1"
+                  @click="openNewTab('https://www.instagram.com/kursusbahasadankomputer_sci/profilecard/?igsh=MjNlNXR5Mnd3aHRw')"
+                >
+                  <div class="features-item justify-content-center">
+                    <i
+                      class="bi bi-instagram"
+                      style="
+                        font-size: 40px;
+                        background: linear-gradient(
+                          45deg,
+                          #f58529,
+                          #dd2a7b,
+                          #8134af,
+                          #515bd4
+                        );
+                        -webkit-background-clip: text;
+                        color: transparent;
+                      "
+                    ></i>
+                    <h3 class="d-none d-lg-block">
+                      <a
+                        href="https://www.instagram.com/kursusbahasadankomputer_sci/profilecard/?igsh=MjNlNXR5Mnd3aHRw"
+                        class="stretched-link"
+                        >Instagaram</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col mt-1"
+                  @click="openNewTab('https://www.tiktok.com/@ayokursus?_t=8sTfZBCKRyU&_r=1')"
+                >
+                  <div class="features-item justify-content-center">
+                    <i
+                      class="bi bi-tiktok"
+                      style="font-size: 40px; color: #000000"
+                    ></i>
+                    <h3 class="d-none d-lg-block">
+                      <a
+                        href="https://www.tiktok.com/@ayokursus?_t=8sTfZBCKRyU&_r=1"
+                        class="stretched-link"
+                        >Tiktok</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="col mt-1"
+                  @click="openNewTab('https://www.facebook.com/profile.php?id=61567685371018&mibextid=ZbWKwL')"
+                >
+                  <div class="features-item justify-content-center">
+                    <i
+                      class="bi bi-facebook"
+                      style="
+                        font-size: 40px;
+                        background: linear-gradient(45deg, #1877f2, #3b5998);
+                        -webkit-background-clip: text;
+                        color: transparent;
+                      "
+                    ></i>
+                    <h3 class="d-none d-lg-block">
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61567685371018&mibextid=ZbWKwL"
+                        class="stretched-link"
+                        >Facebook</a
+                      >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer-top fixed-bottom">
+      <!-- <div class="container "> -->
+      <div class="d-flex flex-row-reverse align-items-center py-2">
+        <div
+          class="pe-4 d-flex justify-content-center align-items-center"
+          @click="openNewTab('https://wa.me/6285333399210')"
+        >
+          <img src="assets/img/wa-logo.png" alt="" class="wa-logo" />
+          <span class="ms-2 fw-semibold text-white d-none"
+            >Ruang Konsultasi</span
+          >
+        </div>
+      </div>
+      <!-- </div> -->
+    </footer>
+
+    <!-- Scroll Top -->
+    <!-- <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a> -->
+
+    <!-- Popup -->
+    <script>
+      let popups = ["popup1", "popup2", "popup3", "popup4", "popup5", "popup6", "popup7", "popup8", "popup9","popup10"];
+        let index = 0;
+
+        function showPopupSequentially() {
+            if (index < popups.length) {
+                let popup = document.getElementById(popups[index]);
+                popup.style.display = "flex";
+                setTimeout(() => {
+                    popup.style.opacity = "1";
+                }, 1000);
+                
+                setTimeout(() => {
+                    popup.style.opacity = "0";
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                        index = (index + 1) % popups.length;
+                        showPopupSequentially();
+                    }, 1000);
+                }, 6000);
+            }
+        }
+
+        window.onload = () => {
+            setTimeout(showPopupSequentially, 9000);
+        };
+    </script>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- <script>
+        const carousel = new bootstrap.Carousel('#carouselExampleSlidesOnly', {
+            interval: 1000,
+            touch: true,
+            pause: false
+        })
+    </script> -->
+  </body>
+</html>
