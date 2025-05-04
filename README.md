@@ -20,4 +20,4 @@
 
 1. Clone repositori ini:
    ```bash
-   git clone https://github.com/username/ayo_kursus.git
+   git clone https://github.com/yogisepdu/ayo_kursus.git
